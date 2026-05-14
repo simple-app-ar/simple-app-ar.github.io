@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol&#237;tica de Privacidad | $imple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0E0E11',
+                        primaryPurple: '#7B5CFF',
+                        incomeGreen: '#3DDC97',
+                        expenseRed: '#FF5C5C',
+                        softText: '#BFBFD2',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0E0E11;
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #7B5CFF 0%, #9A7BFF 100%);
+            box-shadow: 0 8px 25px rgba(123, 92, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(123, 92, 255, 0.6);
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(123, 92, 255, 0.25);
+            border-radius: 14px;
+            overflow: hidden;
+            background: rgba(123, 92, 255, 0.06);
+        }
+        .lang-toggle button {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #BFBFD2;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .lang-toggle button:hover {
+            color: white;
+        }
+        .lang-toggle button.active {
+            background: linear-gradient(135deg, #7B5CFF 0%, #9A7BFF 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primaryPurple selection:text-white">
+
+    <!-- NAVBAR (identical to index.html) -->
+    <nav class="fixed top-0 w-full z-50 py-8 px-10 flex justify-between items-center bg-darkBg/60 backdrop-blur-xl border-b border-white/5">
+        <div class="flex items-center gap-3">
+             <a href="index.html" class="text-3xl font-bold tracking-tighter uppercase text-white hover:opacity-80 transition">$imple</a>
+        </div>
+        <div class="hidden lg:flex gap-12 text-sm font-semibold text-softText tracking-wider">
+            <a href="index.html#features" class="hover:text-white transition-all duration-300">
+                <span data-lang="es">CARACTER&#205;STICAS</span>
+                <span data-lang="en" class="hidden">FEATURES</span>
+            </a>
+            <a href="index.html#security" class="hover:text-white transition-all duration-300">
+                <span data-lang="es">SEGURIDAD</span>
+                <span data-lang="en" class="hidden">SECURITY</span>
+            </a>
+            <a href="privacy.html" class="text-white transition-all duration-300">
+                <span data-lang="es">PRIVACIDAD</span>
+                <span data-lang="en" class="hidden">PRIVACY</span>
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="lang-toggle">
+                <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+                <button id="btn-en" onclick="setLang('en')">EN</button>
+            </div>
+            <a href="index.html" class="btn-premium px-8 py-3 rounded-2xl font-bold text-sm tracking-widest text-white">
+                <span data-lang="es">CONSEGUIR APP</span>
+                <span data-lang="en" class="hidden">GET APP</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="max-w-4xl mx-auto px-10 pt-44 pb-20">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tighter">
+            <span data-lang="es">Pol&#237;tica de <span class="text-primaryPurple">Privacidad</span></span>
+            <span data-lang="en" class="hidden"><span class="text-primaryPurple">Privacy</span> Policy</span>
+        </h1>
+        <p class="text-softText mb-16 italic text-lg">
+            <span data-lang="es">&#218;ltima actualizaci&#243;n: 13 de mayo de 2026</span>
+            <span data-lang="en" class="hidden">Last updated: May 13, 2026</span>
+        </p>
+
+        <div class="space-y-14 text-lg leading-relaxed text-softText">
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">1. Datos en el dispositivo</span>
+                    <span data-lang="en" class="hidden">1. On-device data</span>
+                </h2>
+                <p>
+                    <span data-lang="es">$imple guarda tus datos financieros en tu dispositivo. Esto incluye ingresos, gastos, deudas, metas, presupuestos, categor&#237;as, notas y movimientos privados de la b&#243;veda. No usamos una base de datos en la nube para guardar tus registros financieros en esta versi&#243;n.</span>
+                    <span data-lang="en" class="hidden">$imple stores your financial data on your device. This includes income, expenses, debts, goals, budgets, categories, notes, and private vault movements. We do not use a cloud database to store your financial records in this release.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">2. Backups locales</span>
+                    <span data-lang="en" class="hidden">2. Local backups</span>
+                </h2>
+                <p>
+                    <span data-lang="es">Puedes exportar e importar un archivo JSON de respaldo desde la app. Ese archivo puede incluir tus datos financieros y de b&#243;veda. Cuando compartes, guardas o importas un backup, el archivo y el destino que eliges quedan bajo tu control.</span>
+                    <span data-lang="en" class="hidden">You can export and import a JSON backup file from the app. That file can include your financial and vault data. When you share, save, or import a backup, the file and the destination you choose are under your control.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">3. Compras PRO</span>
+                    <span data-lang="en" class="hidden">3. PRO purchases</span>
+                </h2>
+                <p>
+                    <span data-lang="es">La compra &#250;nica de PRO se procesa con Google Play Billing. Google Play gestiona el pago. La app usa el estado de compra y restauraci&#243;n solo para activar o restaurar las funciones PRO.</span>
+                    <span data-lang="en" class="hidden">The one-time PRO purchase is processed with Google Play Billing. Google Play handles the payment. The app uses purchase and restore status only to activate or restore PRO features.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">4. Diagn&#243;sticos de fallos</span>
+                    <span data-lang="en" class="hidden">4. Crash diagnostics</span>
+                </h2>
+                <p>
+                    <span data-lang="es">Usamos Firebase Crashlytics para detectar fallos y mejorar la estabilidad. Crashlytics puede enviar a Firebase/Google reportes de errores, trazas, estado relevante de la app, metadatos del dispositivo e identificadores de instalaci&#243;n. No usamos Firebase Analytics.</span>
+                    <span data-lang="en" class="hidden">We use Firebase Crashlytics to detect crashes and improve stability. Crashlytics may send error reports, stack traces, relevant app state, device metadata, and installation identifiers to Firebase/Google. We do not use Firebase Analytics.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">5. Seguridad local y biometr&#237;a</span>
+                    <span data-lang="en" class="hidden">5. Local security and biometrics</span>
+                </h2>
+                <p>
+                    <span data-lang="es">Puedes proteger la app y la b&#243;veda con PIN y biometr&#237;a. Los PIN se guardan localmente mediante almacenamiento seguro. La autenticaci&#243;n biom&#233;trica la procesa el sistema operativo; la app no recibe ni guarda plantillas biom&#233;tricas.</span>
+                    <span data-lang="en" class="hidden">You can protect the app and vault with PIN and biometrics. PINs are stored locally using secure storage. Biometric authentication is handled by the operating system; the app does not receive or store biometric templates.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">6. Notificaciones</span>
+                    <span data-lang="en" class="hidden">6. Notifications</span>
+                </h2>
+                <p>
+                    <span data-lang="es">La app puede programar recordatorios locales para registrar tus movimientos. Puedes controlar los permisos de notificaci&#243;n desde el sistema operativo.</span>
+                    <span data-lang="en" class="hidden">The app may schedule local reminders to record your movements. You can control notification permissions from the operating system.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">7. Sin cuentas ni sincronizaci&#243;n en la nube</span>
+                    <span data-lang="en" class="hidden">7. No accounts or cloud sync</span>
+                </h2>
+                <p>
+                    <span data-lang="es">Esta versi&#243;n no ofrece cuenta, inicio de sesi&#243;n, Google Sign-In, Firebase Auth, Firestore ni backup en la nube. Puedes eliminar los datos locales borrando registros dentro de la app cuando corresponda, limpiando los datos de la app desde el sistema operativo o desinstalando la app.</span>
+                    <span data-lang="en" class="hidden">This release does not offer accounts, sign-in, Google Sign-In, Firebase Auth, Firestore, or cloud backup. You can delete local data by deleting records in the app where available, clearing app data from the operating system, or uninstalling the app.</span>
+                </p>
+            </section>
+
+            <section class="p-10 border border-white/8 bg-white/[0.02] backdrop-blur-sm rounded-[32px]">
+                <h2 class="text-2xl font-bold text-white mb-4">
+                    <span data-lang="es">Contacto</span>
+                    <span data-lang="en" class="hidden">Contact</span>
+                </h2>
+                <p>
+                    <span data-lang="es">Si tienes preguntas sobre nuestra pol&#237;tica de privacidad o sobre el funcionamiento de la app, puedes contactarnos en:</span>
+                    <span data-lang="en" class="hidden">If you have any questions about our privacy policy or how the app works, you can contact us at:</span>
+                    <a href="mailto:soporte@simpleapp.com" class="text-primaryPurple font-bold ml-1 hover:underline">soporte@simpleapp.com</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER (identical to index.html) -->
+    <footer class="py-32 bg-[#09090b] border-t border-white/5 px-10 text-center mt-20">
+        <div class="text-4xl font-bold text-white tracking-tighter mb-10 uppercase">$imple</div>
+        <div class="flex justify-center gap-10 text-sm font-bold tracking-widest text-softText uppercase mb-10">
+            <a href="index.html#features" class="hover:text-white transition">
+                <span data-lang="es">Caracter&#237;sticas</span>
+                <span data-lang="en" class="hidden">Features</span>
+            </a>
+            <a href="privacy.html" class="hover:text-white transition">
+                <span data-lang="es">Privacidad</span>
+                <span data-lang="en" class="hidden">Privacy</span>
+            </a>
+            <a href="#" class="hover:text-white transition">
+                <span data-lang="es">T&#233;rminos</span>
+                <span data-lang="en" class="hidden">Terms</span>
+            </a>
+        </div>
+        <p class="text-softText/20 text-xs font-medium tracking-[0.2em]">&#169; 2026 $IMPLE APP.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-lang="es"]').forEach(el => {
+                el.classList.toggle('hidden', lang !== 'es');
+            });
+            document.querySelectorAll('[data-lang="en"]').forEach(el => {
+                el.classList.toggle('hidden', lang !== 'en');
+            });
+
+            document.documentElement.lang = lang;
+            document.title = lang === 'es'
+                ? 'Pol\u00edtica de Privacidad | $imple'
+                : 'Privacy Policy | $imple';
+
+            localStorage.setItem('simple_lang', lang);
+        }
+
+        (function() {
+            const saved = localStorage.getItem('simple_lang');
+            if (saved) {
+                setLang(saved);
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage || 'es';
+                setLang(browserLang.startsWith('en') ? 'en' : 'es');
+            }
+        })();
+    </script>
+
+</body>
+</html>
