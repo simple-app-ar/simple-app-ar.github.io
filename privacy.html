@@ -35,6 +35,16 @@
             scroll-behavior: smooth;
         }
 
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         .btn-premium {
             background: linear-gradient(135deg, #7B5CFF 0%, #9A7BFF 100%);
             box-shadow: 0 8px 25px rgba(123, 92, 255, 0.4);
@@ -46,9 +56,25 @@
             box-shadow: 0 12px 35px rgba(123, 92, 255, 0.6);
         }
 
+        .site-nav {
+            gap: 24px;
+            justify-content: flex-start;
+        }
+
+        .site-brand-wrap {
+            flex-shrink: 0;
+            min-width: 0;
+        }
+
+        .site-links {
+            flex: 1;
+            justify-content: center;
+        }
+
         .lang-toggle {
             display: flex;
             align-items: center;
+            flex-shrink: 0;
             border: 1px solid rgba(123, 92, 255, 0.25);
             border-radius: 14px;
             overflow: hidden;
@@ -72,16 +98,115 @@
             background: linear-gradient(135deg, #7B5CFF 0%, #9A7BFF 100%);
             color: white;
         }
+
+        .app-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .site-nav {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                grid-template-areas:
+                    "brand lang"
+                    "cta cta";
+                width: 100%;
+                max-width: 100%;
+                padding: 18px 16px;
+                gap: 14px 12px;
+                align-items: center;
+                justify-content: normal;
+            }
+
+            .site-brand-wrap {
+                grid-area: brand;
+                min-width: 0;
+            }
+
+            .site-brand {
+                display: block;
+                font-size: clamp(1.35rem, 7vw, 1.65rem);
+                line-height: 1;
+            }
+
+            .site-links {
+                display: none !important;
+            }
+
+            .app-cta {
+                grid-area: cta;
+                width: 100%;
+                max-width: 240px;
+                margin: 0 auto;
+                justify-content: center;
+                justify-self: center;
+                text-align: center;
+                padding: 11px 14px;
+                border-radius: 14px;
+                font-size: 11px;
+                letter-spacing: 0.08em;
+            }
+
+            .btn-premium:hover {
+                transform: none;
+            }
+
+            .lang-toggle {
+                grid-area: lang;
+                justify-self: end;
+                min-width: max-content;
+            }
+
+            .lang-toggle button {
+                padding: 5px 8px;
+                font-size: 11px;
+            }
+
+            .privacy-main {
+                padding: 148px 16px 56px;
+                max-width: 100%;
+            }
+
+            .privacy-title {
+                font-size: clamp(2.7rem, 13vw, 4rem);
+                line-height: 0.95;
+            }
+
+            .privacy-content {
+                font-size: 1rem;
+                line-height: 1.72;
+            }
+
+            .contact-card {
+                padding: 24px;
+                border-radius: 24px;
+            }
+
+            .site-footer {
+                padding: 72px 16px;
+                margin-top: 48px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 18px 28px;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-primaryPurple selection:text-white">
 
     <!-- NAVBAR (identical to index.html) -->
-    <nav class="fixed top-0 w-full z-50 py-8 px-10 flex justify-between items-center bg-darkBg/60 backdrop-blur-xl border-b border-white/5">
-        <div class="flex items-center gap-3">
-             <a href="index.html" class="text-3xl font-bold tracking-tighter uppercase text-white hover:opacity-80 transition">$imple</a>
+    <nav class="site-nav fixed top-0 w-full z-50 py-8 px-10 flex justify-between items-center bg-darkBg/60 backdrop-blur-xl border-b border-white/5">
+        <div class="site-brand-wrap flex items-center gap-3">
+             <a href="index.html" class="site-brand text-3xl font-bold tracking-tighter uppercase text-white hover:opacity-80 transition">$imple</a>
         </div>
-        <div class="hidden lg:flex gap-12 text-sm font-semibold text-softText tracking-wider">
+        <div class="site-links hidden lg:flex gap-12 text-sm font-semibold text-softText tracking-wider">
             <a href="index.html#features" class="hover:text-white transition-all duration-300">
                 <span data-lang="es">CARACTER&#205;STICAS</span>
                 <span data-lang="en" class="hidden">FEATURES</span>
@@ -95,21 +220,19 @@
                 <span data-lang="en" class="hidden">PRIVACY</span>
             </a>
         </div>
-        <div class="flex items-center gap-4">
-            <div class="lang-toggle">
-                <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
-                <button id="btn-en" onclick="setLang('en')">EN</button>
-            </div>
-            <a href="index.html" class="btn-premium px-8 py-3 rounded-2xl font-bold text-sm tracking-widest text-white">
-                <span data-lang="es">CONSEGUIR APP</span>
-                <span data-lang="en" class="hidden">GET APP</span>
-            </a>
+        <div class="lang-toggle">
+            <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+            <button id="btn-en" onclick="setLang('en')">EN</button>
         </div>
+        <a href="https://play.google.com/store/apps/details?id=com.migueld.gastossimple" target="_blank" rel="noopener noreferrer" class="app-cta btn-premium px-8 py-3 rounded-2xl font-bold text-sm tracking-widest text-white">
+            <span data-lang="es">CONSEGUIR APP</span>
+            <span data-lang="en" class="hidden">GET APP</span>
+        </a>
     </nav>
 
     <!-- CONTENT -->
-    <main class="max-w-4xl mx-auto px-10 pt-44 pb-20">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tighter">
+    <main class="privacy-main max-w-4xl mx-auto px-10 pt-44 pb-20">
+        <h1 class="privacy-title text-5xl md:text-7xl font-bold mb-4 tracking-tighter">
             <span data-lang="es">Pol&#237;tica de <span class="text-primaryPurple">Privacidad</span></span>
             <span data-lang="en" class="hidden"><span class="text-primaryPurple">Privacy</span> Policy</span>
         </h1>
@@ -118,7 +241,7 @@
             <span data-lang="en" class="hidden">Last updated: May 13, 2026</span>
         </p>
 
-        <div class="space-y-14 text-lg leading-relaxed text-softText">
+        <div class="privacy-content space-y-14 text-lg leading-relaxed text-softText">
             <section>
                 <h2 class="text-2xl font-bold text-white mb-4">
                     <span data-lang="es">1. Datos en el dispositivo</span>
@@ -196,7 +319,7 @@
                 </p>
             </section>
 
-            <section class="p-10 border border-white/8 bg-white/[0.02] backdrop-blur-sm rounded-[32px]">
+            <section class="contact-card p-10 border border-white/8 bg-white/[0.02] backdrop-blur-sm rounded-[32px]">
                 <h2 class="text-2xl font-bold text-white mb-4">
                     <span data-lang="es">Contacto</span>
                     <span data-lang="en" class="hidden">Contact</span>
@@ -211,9 +334,9 @@
     </main>
 
     <!-- FOOTER (identical to index.html) -->
-    <footer class="py-32 bg-[#09090b] border-t border-white/5 px-10 text-center mt-20">
+    <footer class="site-footer py-32 bg-[#09090b] border-t border-white/5 px-10 text-center mt-20">
         <div class="text-4xl font-bold text-white tracking-tighter mb-10 uppercase">$imple</div>
-        <div class="flex justify-center gap-10 text-sm font-bold tracking-widest text-softText uppercase mb-10">
+        <div class="footer-links flex justify-center gap-10 text-sm font-bold tracking-widest text-softText uppercase mb-10">
             <a href="index.html#features" class="hover:text-white transition">
                 <span data-lang="es">Caracter&#237;sticas</span>
                 <span data-lang="en" class="hidden">Features</span>
