@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pol&#237;tica de Privacidad | $imple</title>
+    <meta name="description" content="Política de privacidad de $imple. Tus datos financieros se guardan únicamente en tu dispositivo: sin cuentas, sin servidores, sin rastreo.">
+    <meta name="theme-color" content="#0E0E11">
+    <meta name="robots" content="index, follow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -356,10 +359,6 @@
                 <span data-lang="es">Privacidad</span>
                 <span data-lang="en" class="hidden">Privacy</span>
             </a>
-            <a href="#" class="hover:text-white transition">
-                <span data-lang="es">T&#233;rminos</span>
-                <span data-lang="en" class="hidden">Terms</span>
-            </a>
         </div>
         <p class="text-softText/20 text-xs font-medium tracking-[0.2em]">&#169; 2026 $IMPLE APP.</p>
     </footer>
@@ -386,7 +385,7 @@
 
         (function() {
             const saved = localStorage.getItem('simple_lang');
-            if (saved) {
+            if (saved === 'es' || saved === 'en') {
                 setLang(saved);
             } else {
                 const browserLang = navigator.language || navigator.userLanguage || 'es';

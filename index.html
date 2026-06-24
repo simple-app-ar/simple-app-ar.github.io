@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$imple | Tu dinero, simplificado</title>
+    <meta name="description" content="$imple: la app de finanzas personales más fluida y privada. Registra gastos en segundos, protege tus movimientos con la Bóveda Privada y visualiza tu progreso. Tus datos nunca salen de tu dispositivo.">
+    <meta name="theme-color" content="#0E0E11">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="$imple | Tu dinero, simplificado">
+    <meta property="og:description" content="La experiencia más fluida y privada para gestionar tus finanzas sin esfuerzo.">
+    <meta property="og:image" content="assets/simple-app-screen-es.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -469,10 +476,6 @@
                 <span data-lang="es">Privacidad</span>
                 <span data-lang="en" class="hidden">Privacy</span>
             </a>
-            <a href="#" class="hover:text-white transition">
-                <span data-lang="es">T&#233;rminos</span>
-                <span data-lang="en" class="hidden">Terms</span>
-            </a>
         </div>
         <p class="text-softText/20 text-xs font-medium tracking-[0.2em]">&#169; 2026 $IMPLE APP.</p>
     </footer>
@@ -509,7 +512,7 @@
 
         (function() {
             const saved = localStorage.getItem('simple_lang');
-            if (saved) {
+            if (saved === 'es' || saved === 'en') {
                 setLang(saved);
             } else {
                 const browserLang = navigator.language || navigator.userLanguage || 'es';
